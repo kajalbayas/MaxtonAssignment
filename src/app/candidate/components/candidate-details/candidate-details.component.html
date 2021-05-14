@@ -1,9 +1,7 @@
-<h3>Search By Name</h3>
-
-<input type="text" [(ngModel)]="searchText" aria-label="Number"  placeholder="Search resource by name">
+<h3> Candidate Details </h3>
 
 <div class="example-container mat-elevation-z8">
-  <mat-table #table [dataSource]="employeeData| search: searchText">
+  <mat-table #table [dataSource]="candidate">
 
     <ng-container matColumnDef="name">
       <mat-header-cell *matHeaderCellDef> Name. </mat-header-cell>
@@ -24,6 +22,12 @@
     <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
    </mat-table>
 </div>
-<ng-template #noResults>
-<p>No results found for "{{searchText}}".</p>
-</ng-template>
+
+<div class="container">
+<a routerLink="sort">Sort By Name & Joining Date</a>
+<a routerLink="search">Search By Name</a>
+<a routerLink="experienceCandidate">2 years experienced candidate</a>
+<a routerLink="distinctDepartment">All Department</a>
+<a routerLink="removedDepartment">Removed Developer Candidate</a>
+<router-outlet></router-outlet>
+</div>

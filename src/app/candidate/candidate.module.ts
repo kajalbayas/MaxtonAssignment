@@ -1,10 +1,8 @@
-import { BrowserModule } from '@angular/platform-browser';
+
 import { NgModule } from '@angular/core';
+import { CommonModule } from "@angular/common";
 
-
-import { RouterModule, Routes } from '@angular/router';
 import { CandidateComponent } from '../candidate/candidate.component';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule } from '@angular/common/http';
 import { MatTableModule } from '@angular/material';
 import { MatPaginatorModule } from '@angular/material';
@@ -14,6 +12,9 @@ import { ExperiencedComponent } from './components/experienced/experienced.compo
 import { UniqueDepartmentComponent } from './components/unique-department/unique-department.component';
 import { RemoveDepartmentComponent } from './components/remove-department/remove-department.component';
 import { CandidateRoutingModule } from '../candidate/candidate-routing.module';
+import { FormsModule } from '@angular/forms'; 
+import { SearchPipe } from '../candidate/services/search.pipe';
+import { CandidateDetailsComponent } from './components/candidate-details/candidate-details.component';
 
 @NgModule({
   declarations: [
@@ -22,17 +23,19 @@ import { CandidateRoutingModule } from '../candidate/candidate-routing.module';
     SearchComponent,
     ExperiencedComponent,
     UniqueDepartmentComponent,
-    RemoveDepartmentComponent
+    RemoveDepartmentComponent,
+    SearchPipe,
+    CandidateDetailsComponent
   ],
   imports: [
-    BrowserModule,
-    CandidateRoutingModule,
-    BrowserAnimationsModule,
+   CandidateRoutingModule,
     HttpClientModule,
     MatTableModule,
-    MatPaginatorModule
+    MatPaginatorModule,
+    FormsModule,
+    CommonModule
   ],
-  providers: [],
+  providers: [SearchPipe],
 })
 
 export class CandidateModule { 

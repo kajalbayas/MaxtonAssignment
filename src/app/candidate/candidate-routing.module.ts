@@ -7,26 +7,30 @@ import { UniqueDepartmentComponent } from '../candidate/components/unique-depart
 import { RemoveDepartmentComponent } from '../candidate/components/remove-department/remove-department.component';
 import { ExperiencedComponent } from '../candidate/components/experienced/experienced.component';
 import { CandidateComponent } from '../candidate/candidate.component';
-
-const routes: Routes = [
-  {
-    path: '',
-    component: CandidateComponent,
-    
-    children: [
-      
-       
-        
-          
-          { path: 'sort', component: SortingComponent }
-        
-      
-    ]
-  }
-];
+import { CandidateDetailsComponent } from '../candidate/components/candidate-details/candidate-details.component';
 
 @NgModule({
-  imports: [ RouterModule.forChild(routes) ],
+  imports: [
+    
+    RouterModule.forChild([
+      {
+      path : '',
+      component : CandidateComponent,
+      children: [
+        {
+          path: '',
+          component: CandidateDetailsComponent
+        },
+        { path: 'candidateDetails', component: CandidateDetailsComponent },
+        { path: 'sort', component: SortingComponent },
+        { path: 'search', component: SearchComponent },
+        { path: 'distinctDepartment', component: UniqueDepartmentComponent },
+        { path: 'removedDepartment', component: RemoveDepartmentComponent },
+        { path: 'experienceCandidate', component: ExperiencedComponent },
+      ]
+    }
+    ])
+  ],
   exports: [ RouterModule ]
 })
 export class CandidateRoutingModule { }

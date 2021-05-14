@@ -1,1 +1,14 @@
-<p>unique-department works!</p>
+<h3>Distict Department with candidate count</h3>
+
+<div class="example-container mat-elevation-z8">
+    <table *ngIf="distinctDepartmentCandidates && distinctDepartmentCandidates.length > 0">
+        <tr>
+         <th> Department</th>
+          <th>Candidate Count</th>
+        </tr>
+        <tr *ngFor="let records of distinctDepartmentCandidates">
+          <td>{{records.department}}</td>
+          <td>{{records.count}}</td>
+        </tr>
+      </table>
+</div>
