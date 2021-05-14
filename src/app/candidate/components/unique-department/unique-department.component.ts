@@ -8,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class UniqueDepartmentComponent implements OnInit {
 
-  displayedColumns: string[] = ['name', 'department', 'joining_date'];
+  displayedColumns: string[] = ['department', 'count'];
   candidateDetails;
   distinctDepartmentCandidates: any = [];
 
@@ -40,6 +40,5 @@ export class UniqueDepartmentComponent implements OnInit {
       });
       return true;
     });
-    console.log(this.distinctDepartmentCandidates);
   }
 }

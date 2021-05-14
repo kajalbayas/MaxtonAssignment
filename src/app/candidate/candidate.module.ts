@@ -15,6 +15,7 @@ import { CandidateRoutingModule } from '../candidate/candidate-routing.module';
 import { FormsModule } from '@angular/forms'; 
 import { SearchPipe } from '../candidate/services/search.pipe';
 import { CandidateDetailsComponent } from './components/candidate-details/candidate-details.component';
+import {MatButtonModule} from '@angular/material/button';
 
 @NgModule({
   declarations: [
@@ -33,7 +34,8 @@ import { CandidateDetailsComponent } from './components/candidate-details/candid
     MatTableModule,
     MatPaginatorModule,
     FormsModule,
-    CommonModule
+    CommonModule,
+    MatButtonModule
   ],
   providers: [SearchPipe],
 })
